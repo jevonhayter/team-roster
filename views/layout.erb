@@ -26,6 +26,10 @@
     <p class="alert alert-danger"><%= session.delete(:error) %></p>
    <% end %>
 
+   <% if session[:warning] %>
+    <p class="alert alert-warning"><%= session.delete(:warning) %></p>
+   <% end %>
+
     <%== yield %>
    </div>
 </body>

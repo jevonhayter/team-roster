@@ -112,7 +112,7 @@ post '/teams/:team_id' do
     redirect back
   else
     team[:name] = new_name
-    session[:success] = 'You edited your name successfully!'
+    session[:warning] = 'You edited your name successfully!'
     redirect :teams
   end
 end
@@ -122,12 +122,12 @@ post '/teams/:team_id/destroy' do
   id = params[:team_id].to_i
   session[:teams].delete_at(id)
 
-  session[:success] = 'You deleted your team'
+  session[:warning] = 'You deleted your team'
   redirect :teams
 end
 
 # Team roster page
-get '/roster_page/:team_id' do
+get '/rosters/:team_id' do
   id = params[:team_id].to_i
   @team = session[:teams][id]
 
@@ -162,7 +162,7 @@ post '/rosters/:team_id' do
 
   session[:success] = 'You added a player to your roster'
 
-  redirect "/roster_page/#{@id}"
+  redirect "/rosters/#{@id}"
 end
 
 # Show form to edit a player
@@ -201,7 +201,7 @@ post '/rosters/:team_id/:player_id/edit' do
   player[:number] = number
 
   session[:success] = 'You updated player information.'
-  redirect "/roster_page/#{id}"
+  redirect "/rosters/#{id}"
 end
 
 # Delete player from roster
@@ -212,6 +212,6 @@ post '/rosters/:team_id/:player_id/destroy' do
 
   team[:roster].delete_at(player_id)
 
-  session[:success] = 'Deleted player'
-  redirect "/roster_page/#{team_id}"
+  session[:warning] = 'Deleted player'
+  redirect "/rosters/#{team_id}"
 end

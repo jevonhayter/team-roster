@@ -3,9 +3,10 @@
     <form form action="/teams/<%= params[:team_id] %>" method="post">
       <div class="form-group">
         <label for="teamname">Team Name</label>
-        <input name="team" type="text" class="form-control" placeholder="Enter team name">
+        <input name="team" type="text" class="form-control" placeholder="Enter team name" value="<%= @team[:name] %>">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="/teams">Cancel</a>
     </form>
   </div>
 </div>
