@@ -192,7 +192,6 @@ post '/rosters/:team_id/:player_id/edit' do
   # Validations
   validate_if_empty?(player_name, height, position)
   validate_integer_data(weight, number)
-  jersey_unique(team, number.to_i)
 
   # Update player data
   player[:name] = player_name

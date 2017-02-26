@@ -1,9 +1,11 @@
-<div class="well">
-<form form action="/teams/<%= params[:team_id] %>" method="post">
-  <div class="form-group">
-    <label for="teamname">Team Name</label>
-    <input name="team" type="text" class="form-control" placeholder="Enter team name">
+<div class="space">
+  <div class="well">
+    <form form action="/teams/<%= params[:team_id] %>" method="post">
+      <div class="form-group">
+        <label for="teamname">Team Name</label>
+        <input name="team" type="text" class="form-control" placeholder="Enter team name">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
