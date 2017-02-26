@@ -200,7 +200,7 @@ post '/rosters/:team_id/:player_id/edit' do
   player[:position] = position
   player[:number] = number
 
-  session[:success] = 'You updated player information.'
+  session[:warning] = 'You updated player information.'
   redirect "/rosters/#{id}"
 end
 
