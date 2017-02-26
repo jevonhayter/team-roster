@@ -1,0 +1,31 @@
+<div class="lead">Edit player on theroster</div>
+<div class="well">
+<form form action="/rosters/<%= @team_id %>/<%= @id.to_i %>/edit" method="post">
+  <div class="form-group">
+    <label for="teamname">Player Name</label>
+    <input name="name" type="text" class="form-control" placeholder="Enter player name" value="<%= @player[:name] %>">
+  </div>
+
+  <div class="form-group">
+    <label for="height">Player Height</label>
+    <input name="height" type="text" class="form-control" placeholder="Enter height" value="<%= @player[:height] %>">
+  </div>
+
+  <div class="form-group">
+    <label for="weight">Player Weight</label>
+    <input name="weight" type="text" class="form-control" placeholder="Enter weight" value="<%= @player[:weight] %>">
+  </div>
+
+  <div class="form-group">
+    <label for="position">Player Position</label>
+    <input name="position" type="text" class="form-control" placeholder="Enter position" value="<%= @player[:position] %>">
+  </div>
+
+  <div class="form-group">
+    <label for="jersey number">Jersey Number</label>
+    <input name="jersey" type="text" class="form-control" placeholder="Enter jersey number" value="<%= @player[:number] %>">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

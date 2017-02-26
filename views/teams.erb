@@ -1,0 +1,27 @@
+<div>
+  <p class="lead">Teams list</p>
+</div>
+
+<div class="list-group">
+  <% @teams.each_with_index do |team, index| %>
+  <div class="well">
+    <a href="/roster_page/<%= index %>" class="list-group-item active"><%= team[:name] %></a></br>
+    <div class="text-right">
+      <a href="/teams/<%= index %>/edit">Edit Team Name</a></br>
+      
+      <form class="delete" action="/teams/<%= index %>/destroy" method="post">
+          <button type="submit" class="btn btn-default">Delete Team</button>
+      </form>
+    </div>
+    <form action="/roster/<%= index %>" method="get">
+    <button class="btn btn-default" type="submit">Add Player</button>
+    </form></br>
+    </br>
+    </div>
+  <% end %>
+</div>
+
+
+<a href="/team">Back</a>
+
+
