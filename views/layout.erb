@@ -1,36 +1,35 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>NBA Team Rosters</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
-  <link rel="stylesheet" href="/stylesheets/app.css">
-  <script src="/javascripts/jquery-2.1.4.js"></script>
-  <script src="/javascripts/application.js"></script>
-</head>
+    <title>NBA Team Rosters</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/whitespace-reset.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <script src="/javascripts/jquery-2.1.4.js"></script>
+    <script src="/javascripts/application.js"></script>
+  </head>
 
-<body>
-   <div class="container">
-   <% if session[:success] %>
-    <p class="alert alert-success"><%= session.delete(:success) %></p>
-   <% end %>
+  <body>
+     <div class="container">
+       <% if session[:success] %>
+        <p class="alert alert-success"><%= session.delete(:success) %></p>
+       <% end %>
 
-   <% if session[:error] %>
-    <p class="alert alert-danger"><%= session.delete(:error) %></p>
-   <% end %>
+       <% if session[:error] %>
+        <p class="alert alert-danger"><%= session.delete(:error) %></p>
+       <% end %>
 
-   <% if session[:warning] %>
-    <p class="alert alert-warning"><%= session.delete(:warning) %></p>
-   <% end %>
+       <% if session[:warning] %>
+        <p class="alert alert-warning"><%= session.delete(:warning) %></p>
+       <% end %>
 
-    <%== yield %>
-   </div>
-</body>
+        <%== yield %>
+     </div>
+  </body>
 </html>
