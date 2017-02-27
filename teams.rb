@@ -44,7 +44,7 @@ def validate_integer_data(weight, jersey)
 
     unless test_data
       session[:error] = 'You have to enter a whole number
-                        for weight and jersey number'
+                        for weight and jersey number.'
       redirect back
     end
   end
@@ -80,7 +80,7 @@ post '/teams' do
     redirect back
   else
     session[:teams] << { name: team, roster: [] }
-    session[:success] = 'Thanks for adding your team'
+    session[:success] = 'Thanks for adding a team.'
   end
 
   redirect '/teams'
@@ -122,7 +122,7 @@ post '/teams/:team_id/destroy' do
   id = params[:team_id].to_i
   session[:teams].delete_at(id)
 
-  session[:warning] = 'You deleted your team'
+  session[:warning] = 'You deleted your team.'
   redirect :teams
 end
 
@@ -160,7 +160,7 @@ post '/rosters/:team_id' do
   @team[:roster] << { name: player_name, height: height, weight: weight.to_i,
                       position: position, number: number.to_i }
 
-  session[:success] = 'You added a player to your roster'
+  session[:success] = 'You added a player to your roster.'
 
   redirect "/rosters/#{@id}"
 end
@@ -212,6 +212,6 @@ post '/rosters/:team_id/:player_id/destroy' do
 
   team[:roster].delete_at(player_id)
 
-  session[:warning] = 'Deleted player'
+  session[:warning] = 'Player deleted successfully!'
   redirect "/rosters/#{team_id}"
 end
